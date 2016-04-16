@@ -28,23 +28,26 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnDataKereta" max="32767" attributes="0"/>
-                  <Component id="btnDataGerbong" max="32767" attributes="0"/>
+                  <Component id="btnDataGerbong" pref="376" max="32767" attributes="0"/>
                   <Component id="btnDataStasion" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnDataRute" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnKelolaCS" alignment="0" pref="376" max="32767" attributes="0"/>
-                  <Component id="btnKelolaAdmin" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnExit" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnProfil" alignment="0" max="32767" attributes="0"/>
-                  <Component id="separator1" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnDataKereta" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnDataGerbong" min="-2" max="-2" attributes="0"/>
@@ -52,15 +55,7 @@
               <Component id="btnDataStasion" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnDataRute" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="separator1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnProfil" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnKelolaAdmin" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnKelolaCS" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               <Component id="btnExit" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -91,26 +86,14 @@
         <Property name="text" type="java.lang.String" value="Pengelolaan Data Rute"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnProfil">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Profil"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnKelolaAdmin">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pengelolaan User - Admin"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JSeparator" name="separator1">
-    </Component>
-    <Component class="javax.swing.JButton" name="btnKelolaCS">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Pengelolaan User - Customer Service"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="btnExit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Exit"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="MENU ADMIN"/>
       </Properties>
     </Component>
   </SubComponents>
