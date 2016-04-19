@@ -110,7 +110,7 @@ public class ViewGerbong extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton buttonEdit;
     private javax.swing.JButton buttonHapus;
