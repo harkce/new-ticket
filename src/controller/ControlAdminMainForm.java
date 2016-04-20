@@ -5,22 +5,34 @@
  */
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import model.Aplikasi;
+import view.AdminMainForm;
+
 /**
  *
  * @author Ridwan Wibowo
  */
 
-import model.Stasiun;
-import model.Gerbong;
-import model.Kereta;
-import model.Rute;
-import model.Tiket;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import javax.swing.JOptionPane;
-import view.InputStasiun;
-public class ControlAdminMainForm {
+public class ControlAdminMainForm implements ActionListener {
+    
+    private Aplikasi model;
+    private AdminMainForm view;
+    
+    public ControlAdminMainForm(Aplikasi model) {
+        this.model = model;
+        view = new AdminMainForm();
+        view.addListener(this);
+        view.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+        if (source.equals(view.getBtnExit())) {
+            System.exit(0);
+        }
+    }
     
 }
