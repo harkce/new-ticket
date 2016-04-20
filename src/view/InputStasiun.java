@@ -6,6 +6,7 @@
 package view;
 
 import controller.ControlInputStasiun;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -112,11 +113,6 @@ public class InputStasiun extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
   
-
-    public JTextField getTextFieldStasiun() {
-        return TextFieldStasiun;
-    }
-
     public JButton getButtonHapus() {
         return buttonHapus;
     }
@@ -125,24 +121,10 @@ public class InputStasiun extends javax.swing.JFrame {
         return buttonTambah;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public JScrollPane getjScrollPane2() {
-        return jScrollPane2;
-    }
-
-    public JList<String> getListDaftarStasiun() {
-        return listDaftarStasiun;
-    }
-
-    public void addListener(ControlInputStasiun aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   public void addListener(ActionListener e){
+        buttonHapus.addActionListener(e);
+        buttonTambah.addActionListener(e);
+        
     }
     
 }

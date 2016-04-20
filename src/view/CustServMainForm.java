@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
@@ -141,4 +142,14 @@ public class CustServMainForm extends javax.swing.JFrame {
         return btnProfil;
     }
 
+    public void addListener(ActionListener e){
+        btnDataGerbong.addActionListener(e);
+        btnDataKereta.addActionListener(e);
+        btnDataRute.addActionListener(e);
+        btnDataStasiun.addActionListener(e);
+        btnExit.addActionListener(e);
+        btnInputTiket.addActionListener(e);
+        btnProfil.addActionListener(e);
+        
+    }
 }

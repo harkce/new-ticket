@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -120,24 +121,10 @@ public class InputKereta extends javax.swing.JFrame {
         return buttonTambah;
     }
 
-    public JComboBox<String> getComboboxTambahGerbong() {
-        return comboboxTambahGerbong;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public JScrollPane getjScrollPane2() {
-        return jScrollPane2;
-    }
-
-    public JList<String> getListDaftarGerbong() {
-        return listDaftarGerbong;
+    public void addListener(ActionListener e){
+        buttonHapus.addActionListener(e);
+        buttonTambah.addActionListener(e);
+        
     }
 
 }

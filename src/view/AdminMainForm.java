@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
@@ -156,4 +157,15 @@ public class AdminMainForm extends javax.swing.JFrame {
         return btnProfil;
     }
 
+    public void addListener(ActionListener e){
+        btnDataGerbong.addActionListener(e);
+        btnDataKereta.addActionListener(e);
+        btnDataRute.addActionListener(e);
+        btnDataStasion.addActionListener(e);
+        btnExit.addActionListener(e);
+        btnKelolaAdmin.addActionListener(e);
+        btnKelolaCS.addActionListener(e);
+        btnProfil.addActionListener(e);
+        
+    }
 }

@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -119,28 +120,10 @@ public class InputGerbong extends javax.swing.JFrame {
         return buttonKembali;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public JTextField getTextId() {
-        return textId;
-    }
-
-    public JTextField getTextJumlahKursi() {
-        return textJumlahKursi;
-    }
-
-    public JTextField getTextKursiTersedia() {
-        return textKursiTersedia;
+   public void addListener(ActionListener e){
+        buttonEdit.addActionListener(e);
+        buttonKembali.addActionListener(e);
+        
     }
 
 }

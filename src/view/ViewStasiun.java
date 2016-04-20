@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -124,33 +125,9 @@ public class ViewStasiun extends javax.swing.JFrame {
         return buttonTambah;
     }
 
-    public JTextArea getDetilStasiun() {
-        return detilStasiun;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-    public JScrollPane getjScrollPane2() {
-        return jScrollPane2;
-    }
-
-    public JList<String> getListStasiun() {
-        return listStasiun;
-    }
-
     public void addListener(ActionListener e){
         buttonEdit.addActionListener(e);
         buttonTambah.addActionListener(e);
-        detilStasiun.addActionListener(e);
         
     }
 }

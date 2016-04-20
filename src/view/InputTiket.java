@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -134,28 +135,10 @@ public class InputTiket extends javax.swing.JFrame {
         return btnTambah;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public JLabel getLblJumlah() {
-        return lblJumlah;
-    }
-
-    public JComboBox<String> getRuteCombo() {
-        return ruteCombo;
-    }
-
-    public JTextField getTxtJumlah() {
-        return txtJumlah;
+  public void addListener(ActionListener e){
+        btnKembali.addActionListener(e);
+        btnTambah.addActionListener(e);
+        
     }
 
 }
