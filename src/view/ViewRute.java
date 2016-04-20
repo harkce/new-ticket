@@ -5,6 +5,13 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author habib
@@ -125,4 +132,45 @@ public class ViewRute extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList listRute;
     // End of variables declaration//GEN-END:variables
+
+    public JToggleButton getButtonEdit() {
+        return buttonEdit;
+    }
+
+    public JButton getButtonHapus() {
+        return buttonHapus;
+    }
+
+    public JToggleButton getButtonTambah() {
+        return buttonTambah;
+    }
+
+    public JTextArea getDaftarTiket() {
+        return daftarTiket;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JList getListRute() {
+        return listRute;
+    }
+
 }

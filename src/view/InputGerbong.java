@@ -5,6 +5,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author habib
@@ -106,4 +110,37 @@ public class InputGerbong extends javax.swing.JFrame {
     private javax.swing.JTextField textJumlahKursi;
     private javax.swing.JTextField textKursiTersedia;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getButtonEdit() {
+        return buttonEdit;
+    }
+
+    public JButton getButtonKembali() {
+        return buttonKembali;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JTextField getTextId() {
+        return textId;
+    }
+
+    public JTextField getTextJumlahKursi() {
+        return textJumlahKursi;
+    }
+
+    public JTextField getTextKursiTersedia() {
+        return textKursiTersedia;
+    }
+
 }

@@ -5,6 +5,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+
 /**
  *
  * @author habib
@@ -102,4 +106,29 @@ public class InputRute extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getButtonKembali() {
+        return buttonKembali;
+    }
+
+    public JButton getButtonTambah() {
+        return buttonTambah;
+    }
+
+    public JComboBox getComboStasiun1() {
+        return comboStasiun1;
+    }
+
+    public JComboBox getComboStasiun2() {
+        return comboStasiun2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
 }
