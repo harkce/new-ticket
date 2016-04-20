@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -145,32 +146,10 @@ public class ViewRute extends javax.swing.JFrame {
         return buttonTambah;
     }
 
-    public JTextArea getDaftarTiket() {
-        return daftarTiket;
+    public void addListener(ActionListener e){
+        buttonEdit.addActionListener(e);
+        buttonHapus.addActionListener(e);
+        buttonTambah.addActionListener(e);   
+        
     }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public JLabel getjLabel3() {
-        return jLabel3;
-    }
-
-    public JScrollPane getjScrollPane1() {
-        return jScrollPane1;
-    }
-
-    public JScrollPane getjScrollPane2() {
-        return jScrollPane2;
-    }
-
-    public JList getListRute() {
-        return listRute;
-    }
-
 }

@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -115,20 +116,10 @@ public class InputRute extends javax.swing.JFrame {
         return buttonTambah;
     }
 
-    public JComboBox getComboStasiun1() {
-        return comboStasiun1;
-    }
-
-    public JComboBox getComboStasiun2() {
-        return comboStasiun2;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
+   public void addListener(ActionListener e){
+        buttonKembali.addActionListener(e);
+        buttonTambah.addActionListener(e);
+        
     }
 
 }
