@@ -5,6 +5,13 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author habib
@@ -123,4 +130,45 @@ public class ViewGerbong extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList listGerbong;
     // End of variables declaration//GEN-END:variables
+
+    public JToggleButton getButtonEdit() {
+        return buttonEdit;
+    }
+
+    public JButton getButtonHapus() {
+        return buttonHapus;
+    }
+
+    public JToggleButton getButtonTambah() {
+        return buttonTambah;
+    }
+
+    public JTextArea getDetilGerbong() {
+        return detilGerbong;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JList getListGerbong() {
+        return listGerbong;
+    }
+
 }

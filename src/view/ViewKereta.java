@@ -5,6 +5,12 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author Ridwan Wibowo
@@ -146,6 +152,38 @@ public class ViewKereta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listKereta;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getButtonEdit() {
+        return buttonEdit;
+    }
+
+    public JButton getButtonTambah() {
+        return buttonTambah;
+    }
+
+    public JTextArea getDetilKereta() {
+        return detilKereta;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JList<String> getListKereta() {
+        return listKereta;
+    }
 
     
 }

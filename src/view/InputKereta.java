@@ -5,6 +5,12 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author Ridwan Wibowo
@@ -105,4 +111,33 @@ public class InputKereta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listDaftarGerbong;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getButtonHapus() {
+        return buttonHapus;
+    }
+
+    public JButton getButtonTambah() {
+        return buttonTambah;
+    }
+
+    public JComboBox<String> getComboboxTambahGerbong() {
+        return comboboxTambahGerbong;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JList<String> getListDaftarGerbong() {
+        return listDaftarGerbong;
+    }
+
 }

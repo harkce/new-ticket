@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author habib
@@ -110,4 +112,33 @@ public class CustServMainForm extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator selarator1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnDataGerbong() {
+        return btnDataGerbong;
+    }
+
+    public JButton getBtnDataKereta() {
+        return btnDataKereta;
+    }
+
+    public JButton getBtnDataRute() {
+        return btnDataRute;
+    }
+
+    public JButton getBtnDataStasiun() {
+        return btnDataStasiun;
+    }
+
+    public JButton getBtnExit() {
+        return btnExit;
+    }
+
+    public JButton getBtnInputTiket() {
+        return btnInputTiket;
+    }
+
+    public JButton getBtnProfil() {
+        return btnProfil;
+    }
+
 }

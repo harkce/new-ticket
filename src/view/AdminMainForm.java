@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author habib
@@ -121,4 +123,37 @@ public class AdminMainForm extends javax.swing.JFrame {
     private javax.swing.JButton btnProfil;
     private javax.swing.JSeparator separator1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnDataGerbong() {
+        return btnDataGerbong;
+    }
+
+    public JButton getBtnDataKereta() {
+        return btnDataKereta;
+    }
+
+    public JButton getBtnDataRute() {
+        return btnDataRute;
+    }
+
+    public JButton getBtnDataStasion() {
+        return btnDataStasion;
+    }
+
+    public JButton getBtnExit() {
+        return btnExit;
+    }
+
+    public JButton getBtnKelolaAdmin() {
+        return btnKelolaAdmin;
+    }
+
+    public JButton getBtnKelolaCS() {
+        return btnKelolaCS;
+    }
+
+    public JButton getBtnProfil() {
+        return btnProfil;
+    }
+
 }
