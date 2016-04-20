@@ -5,9 +5,6 @@
  */
 package ticket;
 
-import controller.ControlAdminMainForm;
-import model.Aplikasi;
-
 /**
  *
  * @author habib
@@ -19,8 +16,6 @@ public class Ticket {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Aplikasi app = new Aplikasi();
-        new ControlAdminMainForm(app);
     }
     
 }
