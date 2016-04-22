@@ -33,6 +33,23 @@ public class ControlAdminMainForm implements ActionListener {
         if (source.equals(view.getBtnExit())) {
             System.exit(0);
         }
+        if (source.equals(view.getBtnDataKereta())) {
+            new ControlViewKereta(model);
+            view.dispose();
+        }
+        if (source.equals(view.getBtnDataGerbong())) {
+            new ControlViewGerbong(model);
+            view.dispose();
+        }
+        if (source.equals(view.getBtnDataRute())) {
+            new ControlViewRute(model);
+            view.dispose();
+        }
+        if (source.equals(view.getBtnDataStasion())){
+            new ControlViewStasiun(model);
+            view.dispose();
+        }
+       
     }
     
 }
