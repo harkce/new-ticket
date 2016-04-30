@@ -21,6 +21,10 @@ public class Stasiun {
         this.namaStasiun = namaStasiun;
     }
 
+    public Stasiun(String namaStasiun) {
+        this.namaStasiun = namaStasiun;
+    }
+    
     public int getIdStasiun() {
         return idStasiun;
     }

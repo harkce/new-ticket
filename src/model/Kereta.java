@@ -14,8 +14,22 @@ import java.util.LinkedList;
 public class Kereta {
     
     private LinkedList<Gerbong> daftarGerbong;
+    
+    private int idKereta;
+    private String namaKereta;
 
     public Kereta() {
+        this.daftarGerbong = new LinkedList<>();
+    }
+
+    public Kereta(int idKereta, String namaKereta) {
+        this.idKereta = idKereta;
+        this.namaKereta = namaKereta;
+        this.daftarGerbong = new LinkedList<>();
+    }
+    
+    public Kereta(String namaKereta) {
+        this.namaKereta = namaKereta;
         this.daftarGerbong = new LinkedList<>();
     }
     
@@ -29,6 +43,39 @@ public class Kereta {
     
     public void removeGerbong(int i) {
         daftarGerbong.remove(i);
+    }
+
+    public int getIdKereta() {
+        return idKereta;
+    }
+
+    public void setIdKereta(int idKereta) {
+        this.idKereta = idKereta;
+    }
+    
+    public String getNamaKereta() {
+        return namaKereta;
+    }
+
+    public void setNamaKereta(String namaKereta) {
+        this.namaKereta = namaKereta;
+    }
+
+    @Override
+    public String toString() {
+        String s =  "ID Kereta : " + idKereta + "\n" +
+                "Nama Kereta : " + namaKereta + "\n" +
+                "Gerbong : [ ";
+        int sumKursi = 0;
+        int sumAvailable = 0;
+        for (Gerbong g : daftarGerbong) {
+            s = s + g.getIdGerbong() + " ";
+            sumKursi += g.getJmlKursi();
+            sumAvailable += g.getKursiAvailable();
+        }
+        return s + "]\n" + 
+                "Jumlah Kursi di Kereta : " + sumKursi + "\n" +
+                "Kursi Available : " + sumAvailable;
     }
     
 }

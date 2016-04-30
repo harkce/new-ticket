@@ -16,13 +16,15 @@ public class Rute {
     
     private Stasiun stasiun1;
     private Stasiun stasiun2;
+    private Kereta kereta;
     private ArrayList<Tiket> daftarTiket;
 
     public Rute() {}
 
-    public Rute(Stasiun stasiun1, Stasiun stasiun2) {
+    public Rute(Stasiun stasiun1, Stasiun stasiun2, Kereta kereta) {
         this.stasiun1 = stasiun1;
         this.stasiun2 = stasiun2;
+        this.kereta = kereta;
     }
 
     public Stasiun getStasiun1() {
@@ -41,6 +43,14 @@ public class Rute {
         this.stasiun2 = stasiun2;
     }
 
+    public Kereta getKereta() {
+        return kereta;
+    }
+
+    public void setKereta(Kereta kereta) {
+        this.kereta = kereta;
+    }
+    
     public ArrayList<Tiket> getDaftarTiket() {
         return daftarTiket;
     }
@@ -54,6 +64,12 @@ public class Rute {
     
     public Tiket getTiket(int i) {
         return daftarTiket.get(i);
+    }
+
+    @Override
+    public String toString() {
+        return "Rute " + stasiun1.getNamaStasiun() + " - " + stasiun2.getNamaStasiun() + "\n" +
+                "Kereta " + kereta.getNamaKereta();
     }
     
 }
