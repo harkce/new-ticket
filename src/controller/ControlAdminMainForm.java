@@ -45,7 +45,7 @@ public class ControlAdminMainForm implements ActionListener {
             new ControlViewRute(model);
             view.dispose();
         }
-        if (source.equals(view.getBtnDataStasion())){
+        if (source.equals(view.getBtnDataStasiun())){
             new ControlViewStasiun(model);
             view.dispose();
         }

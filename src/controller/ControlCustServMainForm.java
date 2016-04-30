@@ -5,21 +5,48 @@
  */
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import model.Aplikasi;
+import view.CSMainForm;
+
 /**
  *
  * @author Ridwan Wibowo
  */
-import model.Stasiun;
-import model.Gerbong;
-import model.Kereta;
-import model.Rute;
-import model.Tiket;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import javax.swing.JOptionPane;
-import view.InputStasiun;
-public class ControlCustServMainForm {
+public class ControlCustServMainForm implements ActionListener {
+    
+    public Aplikasi model;
+    public CSMainForm view;
+    
+    public ControlCustServMainForm(Aplikasi model) {
+        this.model = model;
+        this.view = new CSMainForm();
+        view.setVisible(true);
+        view.addListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+        if (source.equals(view.getBtnExit())) {
+            System.exit(0);
+        } else if (source.equals(view.getBtnDataStasiun())) {
+            view.dispose();
+            new ControlViewStasiun(model);
+        } else if (source.equals(view.getBtnGerbong())) {
+            view.dispose();
+            new ControlViewGerbong(model);
+        } else if (source.equals(view.getBtnKereta())) {
+            view.dispose();
+            new ControlViewKereta(model);
+        } else if (source.equals(view.getBtnRute())) {
+            view.dispose();
+            new ControlViewRute(model);
+        } else if (source.equals(view.getBtnTiket())) {
+            view.dispose();
+            new ControlInputTiket(model);
+        }
+    }
     
 }
