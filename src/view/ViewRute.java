@@ -5,7 +5,10 @@
  */
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -24,6 +27,8 @@ public class ViewRute extends javax.swing.JFrame {
      */
     public ViewRute() {
         initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
 
     /**
@@ -35,18 +40,16 @@ public class ViewRute extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listRute = new javax.swing.JList();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         daftarTiket = new javax.swing.JTextArea();
-        buttonEdit = new javax.swing.JToggleButton();
-        buttonHapus = new javax.swing.JButton();
-        buttonTambah = new javax.swing.JToggleButton();
-
-        jLabel3.setText("jLabel3");
+        btnEdit = new javax.swing.JButton();
+        btnHapus = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
+        btnTambah = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Daftar Gerbong");
@@ -66,11 +69,13 @@ public class ViewRute extends javax.swing.JFrame {
         daftarTiket.setRows(5);
         jScrollPane2.setViewportView(daftarTiket);
 
-        buttonEdit.setText("Edit Rute");
+        btnEdit.setText("Edit Rute");
 
-        buttonHapus.setText("Hapus Rute");
+        btnHapus.setText("Hapus Rute");
 
-        buttonTambah.setText("Tambah Rute");
+        btnKembali.setText("Kembali");
+
+        btnTambah.setText("Tambah Rute");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,22 +86,24 @@ public class ViewRute extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonEdit)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(btnEdit))
+                        .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(buttonHapus)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
-                                .addComponent(buttonTambah))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(138, 138, 138)
                                 .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnHapus)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnKembali)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnTambah))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -112,44 +119,69 @@ public class ViewRute extends javax.swing.JFrame {
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonEdit)
-                    .addComponent(buttonHapus)
-                    .addComponent(buttonTambah))
+                    .addComponent(btnHapus)
+                    .addComponent(btnTambah)
+                    .addComponent(btnEdit)
+                    .addComponent(btnKembali))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton buttonEdit;
-    private javax.swing.JButton buttonHapus;
-    private javax.swing.JToggleButton buttonTambah;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnTambah;
     private javax.swing.JTextArea daftarTiket;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList listRute;
     // End of variables declaration//GEN-END:variables
 
-    public JToggleButton getButtonEdit() {
-        return buttonEdit;
+    public JButton getBtnEdit() {
+        return btnEdit;
     }
 
-    public JButton getButtonHapus() {
-        return buttonHapus;
+    public JButton getBtnHapus() {
+        return btnHapus;
     }
 
-    public JToggleButton getButtonTambah() {
-        return buttonTambah;
+    public JButton getBtnTambah() {
+        return btnTambah;
     }
 
-    public void addListener(ActionListener e){
-        buttonEdit.addActionListener(e);
-        buttonHapus.addActionListener(e);
-        buttonTambah.addActionListener(e);   
-        
+    public JButton getBtnKembali() {
+        return btnKembali;
     }
+
+    public JList getListRute() {
+        return listRute;
+    }
+    
+    public int getSelectedRute() {
+        return listRute.getSelectedIndex();
+    }
+    
+    public void setListRute(String[] rute) {
+        listRute.setListData(rute);
+    }
+
+    public void setTxtTiket(String s) {
+        daftarTiket.setText(s);
+    }
+    
+    public void addListener(ActionListener e) {
+        btnEdit.addActionListener(e);
+        btnHapus.addActionListener(e);
+        btnTambah.addActionListener(e);
+        btnKembali.addActionListener(e);
+    }
+    
+    public void addAdapter(MouseAdapter e) {
+        listRute.addMouseListener(e);
+    }
+    
 }

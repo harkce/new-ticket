@@ -23,15 +23,16 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnExit" max="32767" attributes="0"/>
-                  <Component id="btnDataKereta" alignment="1" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnDataStasiun" alignment="1" max="32767" attributes="0"/>
-                  <Component id="btnDataGerbong" alignment="0" pref="380" max="32767" attributes="0"/>
-                  <Component id="btnDataRute" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnExit" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnTiket" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnRute" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnDataStasiun" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnKereta" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnGerbong" alignment="0" pref="380" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -43,16 +44,18 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnDataKereta" min="-2" max="-2" attributes="0"/>
+              <Component id="btnKereta" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnDataGerbong" min="-2" max="-2" attributes="0"/>
+              <Component id="btnGerbong" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnDataStasiun" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnDataRute" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnRute" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnTiket" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
               <Component id="btnExit" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,27 +64,32 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Menu Admin"/>
+        <Property name="text" type="java.lang.String" value="Menu Customer Service"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnDataKereta">
+    <Component class="javax.swing.JButton" name="btnKereta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pengelolaan Data Kereta"/>
+        <Property name="text" type="java.lang.String" value="Lihat Data Kereta"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnDataGerbong">
+    <Component class="javax.swing.JButton" name="btnGerbong">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pengelolaan Data Gerbong"/>
+        <Property name="text" type="java.lang.String" value="Lihat Data Gerbong"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnDataStasiun">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pengelolaan Data Stasiun"/>
+        <Property name="text" type="java.lang.String" value="Lihat Data Stasiun"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnDataRute">
+    <Component class="javax.swing.JButton" name="btnRute">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pengelolaan Data Rute"/>
+        <Property name="text" type="java.lang.String" value="Lihat Data Rute"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTiket">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Input Tiket"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnExit">

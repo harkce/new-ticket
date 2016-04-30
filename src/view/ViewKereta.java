@@ -5,12 +5,12 @@
  */
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
 /**
  *
@@ -23,6 +23,10 @@ public class ViewKereta extends javax.swing.JFrame {
      */
     public ViewKereta() {
         initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setTitle("Data Kereta");
+        detilKereta.setEditable(false);
     }
 
     /**
@@ -38,10 +42,12 @@ public class ViewKereta extends javax.swing.JFrame {
         listKereta = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         detilKereta = new javax.swing.JTextArea();
-        buttonEdit = new javax.swing.JButton();
-        buttonTambah = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnHapus = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
+        btnTambah = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Daftar Kereta");
@@ -57,13 +63,17 @@ public class ViewKereta extends javax.swing.JFrame {
         detilKereta.setRows(5);
         jScrollPane2.setViewportView(detilKereta);
 
-        buttonEdit.setText("Edit");
-
-        buttonTambah.setText("Tambah");
+        btnEdit.setText("Edit");
 
         jLabel1.setText("Daftar Kereta");
 
         jLabel2.setText("Detil Kereta");
+
+        btnHapus.setText("Hapus");
+
+        btnKembali.setText("Kembali");
+
+        btnTambah.setText("Tambah");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,9 +83,13 @@ public class ViewKereta extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonEdit)
+                        .addComponent(btnEdit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnHapus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonTambah))
+                        .addComponent(btnKembali)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTambah))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -99,53 +113,20 @@ public class ViewKereta extends javax.swing.JFrame {
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonTambah)
-                    .addComponent(buttonEdit))
+                    .addComponent(btnTambah)
+                    .addComponent(btnEdit)
+                    .addComponent(btnHapus)
+                    .addComponent(btnKembali))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(ViewKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(ViewKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(ViewKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(ViewKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ViewKereta().setVisible(true);
-//            }
-//        });
-//    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonEdit;
-    private javax.swing.JButton buttonTambah;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnTambah;
     private javax.swing.JTextArea detilKereta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -154,18 +135,47 @@ public class ViewKereta extends javax.swing.JFrame {
     private javax.swing.JList<String> listKereta;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getButtonEdit() {
-        return buttonEdit;
+    public JButton getBtnKembali() {
+        return btnKembali;
     }
-
-    public JButton getButtonTambah() {
-        return buttonTambah;
+    
+    public JButton getBtnEdit() {
+        return btnEdit;
     }
-
+    
+    public JButton getBtnHapus() {
+        return btnHapus;
+    }
+    
+    public JButton getBtnTambah() {
+        return btnTambah;
+    }
+    
     public void addListener(ActionListener e){
-        buttonEdit.addActionListener(e);
-        buttonTambah.addActionListener(e);
-        
+        btnEdit.addActionListener(e);
+        btnTambah.addActionListener(e);
+        btnKembali.addActionListener(e);
+        btnHapus.addActionListener(e);
+    }
+    
+    public void addAdapter(MouseAdapter e) {
+        listKereta.addMouseListener(e);
+    }
+    
+    public JList getListId() {
+        return listKereta;
+    }
+    
+    public int getSelectedId() {
+        return Integer.parseInt(listKereta.getSelectedValue());
+    }
+    
+    public void setListId(String[] list) {
+        listKereta.setListData(list);
+    }
+    
+    public void setDetilKereta(String s) {
+        detilKereta.setText(s);
     }
     
 }

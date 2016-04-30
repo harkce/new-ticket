@@ -5,10 +5,12 @@
  */
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JLabel;
 
 /**
  *
@@ -21,6 +23,8 @@ public class InputRute extends javax.swing.JFrame {
      */
     public InputRute() {
         initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
 
     /**
@@ -36,6 +40,8 @@ public class InputRute extends javax.swing.JFrame {
         comboStasiun1 = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         comboStasiun2 = new javax.swing.JComboBox();
+        jLabel3 = new javax.swing.JLabel();
+        comboKereta = new javax.swing.JComboBox<>();
         buttonKembali = new javax.swing.JButton();
         buttonTambah = new javax.swing.JButton();
 
@@ -43,11 +49,9 @@ public class InputRute extends javax.swing.JFrame {
 
         jLabel1.setText("Stasiun 1");
 
-        comboStasiun1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel2.setText("Stasiun 2");
 
-        comboStasiun2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel3.setText("Kereta");
 
         buttonKembali.setText("Kembali");
 
@@ -61,18 +65,18 @@ public class InputRute extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboStasiun1, 0, 199, Short.MAX_VALUE))
+                        .addComponent(buttonKembali)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addComponent(buttonTambah))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonKembali)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(buttonTambah))
+                            .addComponent(comboStasiun1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboKereta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(comboStasiun2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -83,29 +87,32 @@ public class InputRute extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(comboStasiun1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboStasiun2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonTambah)
-                            .addComponent(buttonKembali)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(comboStasiun2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboKereta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonKembali)
+                    .addComponent(buttonTambah))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonKembali;
     private javax.swing.JButton buttonTambah;
+    private javax.swing.JComboBox<String> comboKereta;
     private javax.swing.JComboBox comboStasiun1;
     private javax.swing.JComboBox comboStasiun2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
     public JButton getButtonKembali() {
@@ -116,10 +123,39 @@ public class InputRute extends javax.swing.JFrame {
         return buttonTambah;
     }
 
-   public void addListener(ActionListener e){
+    public JComboBox getComboStasiun1() {
+        return comboStasiun1;
+    }
+
+    public JComboBox getComboStasiun2() {
+        return comboStasiun2;
+    }
+
+    public JComboBox<String> getComboKereta() {
+        return comboKereta;
+    }
+    
+    public void setComboStasiun1(String[] item) {
+        for (int i = 0; i < item.length; i++) {
+            comboStasiun1.addItem(item[i]);
+        }
+    }
+    
+    public void setComboStasiun2(String[] item) {
+        for (int i = 0; i < item.length; i++) {
+            comboStasiun2.addItem(item[i]);
+        }
+    }
+    
+    public void setComboKereta(String[] item) {
+        for (int i = 0; i < item.length; i++) {
+            comboKereta.addItem(item[i]);
+        }
+    }
+        
+    public void addListener(ActionListener e) {
         buttonKembali.addActionListener(e);
         buttonTambah.addActionListener(e);
-        
     }
 
 }

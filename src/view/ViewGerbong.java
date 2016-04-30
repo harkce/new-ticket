@@ -1,21 +1,20 @@
 /*
- * Created by Muhammad Habib Fikri Sundayana
- * habibgarut@gmail.com | http://edufi.id/ | http://cingkleung.com
- * Don't lazy to think, feel free to think lazy :)
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JToggleButton;
 
 /**
  *
- * @author habib
+ * @author Habib Fikri
  */
 public class ViewGerbong extends javax.swing.JFrame {
 
@@ -24,6 +23,9 @@ public class ViewGerbong extends javax.swing.JFrame {
      */
     public ViewGerbong() {
         initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        detilGerbong.setEditable(false);
     }
 
     /**
@@ -35,42 +37,41 @@ public class ViewGerbong extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listGerbong = new javax.swing.JList();
-        jLabel2 = new javax.swing.JLabel();
+        listGerbong = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         detilGerbong = new javax.swing.JTextArea();
-        buttonEdit = new javax.swing.JToggleButton();
-        buttonHapus = new javax.swing.JButton();
-        buttonTambah = new javax.swing.JToggleButton();
-
-        jLabel3.setText("jLabel3");
+        jLabel2 = new javax.swing.JLabel();
+        btnHapus = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
+        btnTambah = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Daftar Gerbong");
 
         jLabel1.setText("Daftar Gerbong");
 
-        listGerbong.setModel(new javax.swing.AbstractListModel() {
+        listGerbong.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(listGerbong);
-
-        jLabel2.setText("Detil Gerbong");
 
         detilGerbong.setColumns(20);
         detilGerbong.setRows(5);
         jScrollPane2.setViewportView(detilGerbong);
 
-        buttonEdit.setText("Edit Gerbong");
+        jLabel2.setText("Detil Gerbong");
 
-        buttonHapus.setText("Hapus Gerbong");
+        btnHapus.setText("Hapus");
 
-        buttonTambah.setText("Tambah Gerbong");
+        btnEdit.setText("Edit");
+
+        btnKembali.setText("Kembali");
+
+        btnTambah.setText("Tambah");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,21 +81,23 @@ public class ViewGerbong extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonEdit)
+                        .addComponent(btnHapus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonHapus)
+                        .addComponent(btnEdit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonTambah)))
+                        .addComponent(btnKembali)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnTambah)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -105,49 +108,74 @@ public class ViewGerbong extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonEdit)
-                    .addComponent(buttonHapus)
-                    .addComponent(buttonTambah))
-                .addContainerGap())
+                    .addComponent(btnHapus)
+                    .addComponent(btnEdit)
+                    .addComponent(btnKembali)
+                    .addComponent(btnTambah))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton buttonEdit;
-    private javax.swing.JButton buttonHapus;
-    private javax.swing.JToggleButton buttonTambah;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnHapus;
+    private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnTambah;
     private javax.swing.JTextArea detilGerbong;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList listGerbong;
+    private javax.swing.JList<String> listGerbong;
     // End of variables declaration//GEN-END:variables
 
-    public JToggleButton getButtonEdit() {
-        return buttonEdit;
+    public JButton getBtnEdit() {
+        return btnEdit;
     }
 
-    public JButton getButtonHapus() {
-        return buttonHapus;
+    public JButton getBtnHapus() {
+        return btnHapus;
     }
 
-    public JToggleButton getButtonTambah() {
-        return buttonTambah;
+    public JButton getBtnKembali() {
+        return btnKembali;
     }
 
-    public void addListener(ActionListener e){
-        buttonEdit.addActionListener(e);
-        buttonHapus.addActionListener(e);
-        buttonTambah.addActionListener(e);
+    public JButton getBtnTambah() {
+        return btnTambah;
+    }
+
+    public JList<String> getListGerbong() {
+        return listGerbong;
+    }
+
+    public void addListener(ActionListener e) {
+        btnHapus.addActionListener(e);
+        btnEdit.addActionListener(e);
+        btnKembali.addActionListener(e);
+        btnTambah.addActionListener(e);
+    }
+    
+    public void addAdapter(MouseAdapter e) {
+        listGerbong.addMouseListener(e);
+    }
+    
+    public int getSelectedId() {
+        return Integer.parseInt(listGerbong.getSelectedValue());
+    }
+    
+    public void setListId(String[] listId) {
+        listGerbong.setListData(listId);
+    }
+    
+    public void setDetilGerbong(String s) {
+        detilGerbong.setText(s);
     }
 
 }

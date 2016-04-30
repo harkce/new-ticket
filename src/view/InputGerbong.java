@@ -5,9 +5,12 @@
  */
 package view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
@@ -21,6 +24,8 @@ public class InputGerbong extends javax.swing.JFrame {
      */
     public InputGerbong() {
         initComponents();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
 
     /**
@@ -33,17 +38,17 @@ public class InputGerbong extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        textId = new javax.swing.JTextField();
+        comboKereta = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         textJumlahKursi = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         textKursiTersedia = new javax.swing.JTextField();
         buttonKembali = new javax.swing.JButton();
-        buttonEdit = new javax.swing.JButton();
+        btnTambah = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("ID Gerbong");
+        jLabel1.setText("Kereta");
 
         jLabel2.setText("Jumlah Kursi");
 
@@ -51,7 +56,7 @@ public class InputGerbong extends javax.swing.JFrame {
 
         buttonKembali.setText("Kembali");
 
-        buttonEdit.setText("Edit");
+        btnTambah.setText("Tambah");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,13 +72,13 @@ public class InputGerbong extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textId, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                             .addComponent(textJumlahKursi)
-                            .addComponent(textKursiTersedia)))
+                            .addComponent(textKursiTersedia)
+                            .addComponent(comboKereta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buttonKembali)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonEdit)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                        .addComponent(btnTambah)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -82,7 +87,7 @@ public class InputGerbong extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboKereta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textJumlahKursi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -94,7 +99,7 @@ public class InputGerbong extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonKembali)
-                    .addComponent(buttonEdit))
+                    .addComponent(btnTambah))
                 .addContainerGap())
         );
 
@@ -102,28 +107,53 @@ public class InputGerbong extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonEdit;
+    private javax.swing.JButton btnTambah;
     private javax.swing.JButton buttonKembali;
+    private javax.swing.JComboBox<String> comboKereta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField textId;
     private javax.swing.JTextField textJumlahKursi;
     private javax.swing.JTextField textKursiTersedia;
     // End of variables declaration//GEN-END:variables
 
     public JButton getButtonEdit() {
-        return buttonEdit;
+        return btnTambah;
     }
 
     public JButton getButtonKembali() {
         return buttonKembali;
     }
 
+    public JComboBox<String> getComboKereta() {
+        return comboKereta;
+    }
+    
+    public void addAdapter(MouseAdapter e) {
+        comboKereta.addMouseListener(e);
+    }
+    
+    public int getSelectedId() {
+        return Integer.parseInt((String) comboKereta.getSelectedItem());
+    }
+    
+    public void setCombo(String[] item) {
+        for (int i = 0; i < item.length; i++) {
+            comboKereta.addItem(item[i]);
+        }
+    }
+
    public void addListener(ActionListener e){
-        buttonEdit.addActionListener(e);
+        btnTambah.addActionListener(e);
         buttonKembali.addActionListener(e);
-        
+    }
+
+    public JTextField getTextJumlahKursi() {
+        return textJumlahKursi;
+    }
+
+    public JTextField getTextKursiTersedia() {
+        return textKursiTersedia;
     }
 
 }

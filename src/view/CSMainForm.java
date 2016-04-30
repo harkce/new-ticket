@@ -14,12 +14,12 @@ import javax.swing.JButton;
  *
  * @author Habib Fikri
  */
-public class AdminMainForm extends javax.swing.JFrame {
+public class CSMainForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminMainForm
+     * Creates new form CSMainForm
      */
-    public AdminMainForm() {
+    public CSMainForm() {
         initComponents();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
@@ -35,24 +35,27 @@ public class AdminMainForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnDataKereta = new javax.swing.JButton();
-        btnDataGerbong = new javax.swing.JButton();
+        btnKereta = new javax.swing.JButton();
+        btnGerbong = new javax.swing.JButton();
         btnDataStasiun = new javax.swing.JButton();
-        btnDataRute = new javax.swing.JButton();
+        btnRute = new javax.swing.JButton();
+        btnTiket = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Menu Admin");
+        jLabel1.setText("Menu Customer Service");
 
-        btnDataKereta.setText("Pengelolaan Data Kereta");
+        btnKereta.setText("Lihat Data Kereta");
 
-        btnDataGerbong.setText("Pengelolaan Data Gerbong");
+        btnGerbong.setText("Lihat Data Gerbong");
 
-        btnDataStasiun.setText("Pengelolaan Data Stasiun");
+        btnDataStasiun.setText("Lihat Data Stasiun");
 
-        btnDataRute.setText("Pengelolaan Data Rute");
+        btnRute.setText("Lihat Data Rute");
+
+        btnTiket.setText("Input Tiket");
 
         btnExit.setText("Exit");
 
@@ -60,15 +63,16 @@ public class AdminMainForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDataKereta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTiket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDataStasiun, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnDataGerbong, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                    .addComponent(btnDataRute, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnKereta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGerbong, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -77,41 +81,41 @@ public class AdminMainForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDataKereta)
+                .addComponent(btnKereta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDataGerbong)
+                .addComponent(btnGerbong)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDataStasiun)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDataRute)
-                .addGap(18, 18, 18)
+                .addComponent(btnRute)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTiket)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(btnExit)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDataGerbong;
-    private javax.swing.JButton btnDataKereta;
-    private javax.swing.JButton btnDataRute;
     private javax.swing.JButton btnDataStasiun;
     private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnGerbong;
+    private javax.swing.JButton btnKereta;
+    private javax.swing.JButton btnRute;
+    private javax.swing.JButton btnTiket;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
-    public JButton getBtnDataGerbong() {
-        return btnDataGerbong;
+    public void addListener(ActionListener e) {
+        btnDataStasiun.addActionListener(e);
+        btnExit.addActionListener(e);
+        btnGerbong.addActionListener(e);
+        btnKereta.addActionListener(e);
+        btnRute.addActionListener(e);
+        btnTiket.addActionListener(e);
     }
-
-    public JButton getBtnDataKereta() {
-        return btnDataKereta;
-    }
-
-    public JButton getBtnDataRute() {
-        return btnDataRute;
-    }
-
+    
     public JButton getBtnDataStasiun() {
         return btnDataStasiun;
     }
@@ -120,12 +124,20 @@ public class AdminMainForm extends javax.swing.JFrame {
         return btnExit;
     }
 
-    public void addListener(ActionListener e) {
-        btnDataGerbong.addActionListener(e);
-        btnDataKereta.addActionListener(e);
-        btnDataRute.addActionListener(e);
-        btnDataStasiun.addActionListener(e);
-        btnExit.addActionListener(e);
+    public JButton getBtnGerbong() {
+        return btnGerbong;
+    }
+
+    public JButton getBtnKereta() {
+        return btnKereta;
+    }
+
+    public JButton getBtnRute() {
+        return btnRute;
+    }
+
+    public JButton getBtnTiket() {
+        return btnTiket;
     }
 
 }
